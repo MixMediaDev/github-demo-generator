@@ -6,6 +6,7 @@ jobs:
     steps:
     - uses: azure/login@v2
       with:
+        auth-type: IDENTITY
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
     - uses: azure/appservice-settings@v1
       with:
