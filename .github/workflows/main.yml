@@ -1,5 +1,5 @@
-on: [push]
-
+on: [push,workflow_dispatch]
+name: Deploy Web App
 jobs:
   build:
     runs-on: windows-latest
