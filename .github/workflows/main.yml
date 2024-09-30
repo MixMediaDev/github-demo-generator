@@ -1,0 +1,17 @@
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: azure/login@v2
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+    - uses: azure/appservice-settings@v1
+      with:
+        app-name: 'githubdemogenerator'
+        app-settings-json: '${{ secrets.APP_SETTINGS }}' 
+      id: settings
+    - run: echo "The webapp-url is ${{ steps.settings.outputs.webapp-url }}"
+    - run: |
+        az logout
