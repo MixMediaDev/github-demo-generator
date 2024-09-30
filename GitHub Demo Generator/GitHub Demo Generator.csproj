@@ -9,6 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\lib\fluentui\**" />
+    <Content Remove="wwwroot\lib\fluentui\**" />
+    <EmbeddedResource Remove="wwwroot\lib\fluentui\**" />
+    <None Remove="wwwroot\lib\fluentui\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 
